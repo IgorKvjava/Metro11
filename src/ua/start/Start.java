@@ -13,6 +13,7 @@ import java.util.List;
  */
 public class Start {
     public static void main(String[] args) {
+        //Consist  carriages------------------------------------------
         List<DepoVagon> depoVagons=new ArrayList<>();
         String name="vagon-";
         int count=0;
@@ -24,8 +25,8 @@ public class Start {
             depoVagons.add(new DepoVagon(name+(++count),true));
             count++;
             }
-        System.out.println(depoVagons);
-        //
+        //System.out.println(depoVagons);
+        //Consist Trains-------------------------------------------------------------
         LinkedList<Train> depoTrains=new LinkedList<>();
         String nameTrain="train";
         Iterator<DepoVagon> iterator=depoVagons.iterator();
@@ -44,7 +45,8 @@ public class Start {
             }
             depoTrains.add(train1);
         }
+        //----------------------------------------------------------------------
          System.out.println("depoVagons size = "+depoVagons.size());
-        System.out.println("Train size - "+depoTrains.size()+" "+depoTrains.get(depoTrains.size()-1));
+        System.out.println("----------Trains-------"+depoTrains);
     }
 }

@@ -5,11 +5,11 @@ package ua.depo;
  */
 public class DepoVagon {
     private String nameVagon;
-    private boolean mainVagon;
+    private boolean typeVagon;
 
     public DepoVagon(String nameVagon, boolean mainVagon) {
         this.nameVagon = nameVagon;
-        this.mainVagon = mainVagon;
+        this.typeVagon = mainVagon;
     }
 
     public String getNameVagon() {
@@ -20,19 +20,18 @@ public class DepoVagon {
         this.nameVagon = nameVagon;
     }
 
-    public boolean isMainVagon() {
-        return mainVagon;
+    public boolean isTypeVagon() {
+        return typeVagon;
     }
 
-    public void setMainVagon(boolean mainVagon) {
-        this.mainVagon = mainVagon;
+    public void setTypeVagon(boolean typeVagon) {
+        this.typeVagon = typeVagon;
     }
 
     @Override
     public String toString() {
-        return "DepoVagon{" +
-                "nameVagon='" + nameVagon + '\'' +
-                ", mainVagon=" + mainVagon +
-                '}'+"\n";
+        return "DepoVagon -- " +
+                "nameVagon - " + nameVagon +
+                " typeVagon - " + typeVagon +"\n";
     }
 }

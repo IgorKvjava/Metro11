@@ -1,8 +1,6 @@
 package ua.depo;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Created by univer3 on 12/12/2015.
@@ -19,7 +17,7 @@ public class Train {
     public int trainSetting(DepoVagon carriage) {
         int a=0;
         //System.out.println("first vagon= " + carriages.getFirst()+" end vagon = "+carriages.getLast()+" size= " + carriages.size());
-        if (carriage.isMainVagon()) {
+        if (carriage.isTypeVagon()) {
             if (fistVagon() & carriages.size() == 4 ) {carriages.addLast(carriage);a=1;}
             if (!fistVagon()) {carriages.addFirst(carriage);a=1;}
             //System.out.println("-----------end vagon= " + carriages.size());
@@ -29,17 +27,16 @@ public class Train {
         //System.out.println(" vagon ----- "+endVagon());
         //System.out.println(" end vagon ----- "+endVagon());
         if (endVagon()) {
-            System.out.println("----------------Train consist= " + carriages.size()+"  name - "+carriage.getNameVagon()+" main - "+carriage.isMainVagon());
+            System.out.println("----------------Train consist= " + carriages.size()+"  name - "+carriage.getNameVagon()+" main - "+carriage.isTypeVagon());
         }
         return a;
     }
     //------------------------------------------------------------
     @Override
     public String toString() {
-        return "\nTrain\n{" +
-                "name='" + name + '\'' +
-                ", carriages=" + carriages +
-                '}';
+        return "\nTrain " +
+                "name -- " + name + "\n"+
+                " carriages\n" + carriages;
     }
 
     public String getName() {
@@ -61,12 +58,12 @@ public class Train {
     private boolean fistVagon() {
         if (carriages.size() == 0)
             return false;
-        return carriages.getFirst().isMainVagon();
+        return carriages.getFirst().isTypeVagon();
     }
 
     private boolean endVagon() {
         if (carriages.size() <5)
             return false;
-        return carriages.getLast().isMainVagon();
+        return carriages.getLast().isTypeVagon();
     }
 }
