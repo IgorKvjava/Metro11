@@ -2,6 +2,7 @@ package ua.start;
 
 import ua.depo.DepoVagon;
 import ua.depo.Train;
+import ua.driver.MetroDriver;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -48,5 +49,12 @@ public class Start {
         //----------------------------------------------------------------------
          System.out.println("depoVagons size = "+depoVagons.size());
         System.out.println("----------Trains-------"+depoTrains);
+        List<MetroDriver> metroDrivers= new LinkedList<>();
+        String nameDriver="Driver";
+        for (int i = 0; i <sizeDepo ; i++) {
+
+
+        }
     }
+
 }
