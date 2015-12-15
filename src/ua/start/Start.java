@@ -15,30 +15,36 @@ public class Start {
     public static void main(String[] args) {
         List<DepoVagon> depoVagons=new ArrayList<>();
         String name="vagon-";
-        boolean mainVagon=true;
-        for (int i=1;i<101;i++ ){
-            depoVagons.add(new DepoVagon(name+i,mainVagon));
-            if((Math.random()*100)>40)
-            {mainVagon=false;}
-            else  mainVagon=true;
+        int count=0;
+        for (int i=1;i<21;i++ ){
+            depoVagons.add(new DepoVagon(name+(count),true));
+            depoVagons.add(new DepoVagon(name+(++count),false));
+            depoVagons.add(new DepoVagon(name+(++count),false));
+            depoVagons.add(new DepoVagon(name+(++count),false));
+            depoVagons.add(new DepoVagon(name+(++count),true));
+            count++;
             }
         System.out.println(depoVagons);
-        List<Train> depoTrains=new LinkedList<>();
+        //
+        LinkedList<Train> depoTrains=new LinkedList<>();
         String nameTrain="train";
         Iterator<DepoVagon> iterator=depoVagons.iterator();
-        for (int i = 0; i <depoVagons.size()/5 ; i++) {
+        int b;
+        int sizeDepo=depoVagons.size()/5;
+        for (int i = 0; i <sizeDepo ; i++) {
             Train train1=new Train(nameTrain+"-"+i);
             System.out.println("Train name= "+train1.getName());
             boolean a=true;
             while (iterator.hasNext()&& a){
-                train1.trainSetting(iterator.next());
-
+                b=train1.trainSetting(iterator.next());
+                //System.out.println("b= "+b);
+                if (b==1) iterator.remove();
                 if(train1.getCarriages().size()==5){ a=false;}
                 //System.out.println("train size - "+train1.getCarriages().size());
             }
             depoTrains.add(train1);
-
         }
-        System.out.println("Train \n"+depoTrains);
+         System.out.println("depoVagons size = "+depoVagons.size());
+        System.out.println("Train size - "+depoTrains.size()+" "+depoTrains.get(depoTrains.size()-1));
     }
 }
