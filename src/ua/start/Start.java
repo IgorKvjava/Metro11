@@ -4,10 +4,8 @@ import ua.depo.DepoVagon;
 import ua.depo.Train;
 import ua.driver.MetroDriver;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * Created by univer3 on 12/12/2015.
@@ -51,10 +49,15 @@ public class Start {
         System.out.println("----------Trains-------"+depoTrains);
         List<MetroDriver> metroDrivers= new LinkedList<>();
         String nameDriver="Driver";
-        for (int i = 0; i <sizeDepo ; i++) {
-
+        Random rand = new Random();
+        for (int i = 0; i <20 ; i++) {
+            MetroDriver metroDriver=new MetroDriver(rand.nextInt(45),nameDriver+"-"+i);
+            metroDrivers.add(metroDriver);
 
         }
+        System.out.println("----------Drivers Trains-------\n"+metroDrivers);
+        Collections.sort(metroDrivers);
+        System.out.println("----------Drivers Trains-------\n"+metroDrivers);
     }
 
 }

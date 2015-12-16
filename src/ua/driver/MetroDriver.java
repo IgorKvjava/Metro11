@@ -10,8 +10,7 @@ public class MetroDriver implements Comparable<MetroDriver>{
     public String toString() {
         return "MetroDriver{" +
                 "skill=" + skill +
-                ", name='" + name + '\'' +
-                '}';
+                ", name='" + name +"\n";
     }
 
     public MetroDriver(double skill, String name) {
