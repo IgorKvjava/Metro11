@@ -8,9 +8,9 @@ public class MetroDriver implements Comparable<MetroDriver>{
     private String name;
     @Override
     public String toString() {
-        return "MetroDriver{" +
-                "skill=" + skill +
-                ", name='" + name +"\n";
+        return "  " +
+                " skill=" + skill +
+                "  name - '" + name +"\n";
     }
 
     public MetroDriver(double skill, String name) {
@@ -37,13 +37,8 @@ public class MetroDriver implements Comparable<MetroDriver>{
     @Override
     public int compareTo(MetroDriver o) {
 
-        return Double.compare(this.skill,o.skill);
+        return Double.compare(o.skill,this.skill);
     }
-    public void driverCompareSkills(MetroDriver metroDriver1,MetroDriver metroDriver2){
-        MetroDriver metroDriverTime=metroDriver1;
-        if (metroDriverTime.compareTo(metroDriver2)>0)
-            System.out.println(metroDriver2);
-        else System.out.println(metroDriver1);
-    }
+
 
 }

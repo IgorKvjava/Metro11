@@ -3,6 +3,7 @@ package ua.start;
 import ua.depo.DepoVagon;
 import ua.depo.Train;
 import ua.driver.MetroDriver;
+import ua.metroline.TrainOnLine;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -44,9 +45,10 @@ public class Start {
             }
             depoTrains.add(train1);
         }
-        //----------------------------------------------------------------------
+
          System.out.println("depoVagons size = "+depoVagons.size());
         System.out.println("----------Trains-------"+depoTrains);
+        //Consist metro driver--------------------------------------------------
         List<MetroDriver> metroDrivers= new LinkedList<>();
         String nameDriver="Driver";
         Random rand = new Random();
@@ -55,9 +57,25 @@ public class Start {
             metroDrivers.add(metroDriver);
 
         }
-        System.out.println("----------Drivers Trains-------\n"+metroDrivers);
+        //System.out.println("----------Drivers Trains-------\n"+metroDrivers);
+        //Sort metro driver
         Collections.sort(metroDrivers);
-        System.out.println("----------Drivers Trains-------\n"+metroDrivers);
-    }
+        System.out.println("----------Drivers Trains sorting-------\n"+metroDrivers);
 
+        //Complect Train On Line drivers-------------------------------------------------
+        LinkedList<TrainOnLine> trainOnLines=new LinkedList<>();
+        Iterator<MetroDriver> metroDriverIterator= metroDrivers.iterator();
+        int indexdepoTrains=0;
+        while (metroDriverIterator.hasNext()){
+            trainOnLines.add(new TrainOnLine(metroDriverIterator.next(),depoTrains.get(indexdepoTrains)));
+            indexdepoTrains++;
+        }
+        System.out.println("---------train OnL ines-------\n"+trainOnLines);
+
+
+
+
+
+
+    }
 }

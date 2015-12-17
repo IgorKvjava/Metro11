@@ -34,7 +34,7 @@ public class Train {
     //------------------------------------------------------------
     @Override
     public String toString() {
-        return "\nTrain " +
+        return " " +
                 "name -- " + name + "\n"+
                 " carriages\n" + carriages;
     }
