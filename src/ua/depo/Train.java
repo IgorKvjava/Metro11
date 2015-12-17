@@ -7,17 +7,17 @@ import java.util.LinkedList;
  */
 public class Train {
     private String name;
-    private LinkedList<DepoVagon> carriages;
+    private LinkedList<DepoWagon> carriages;
 
     public Train(String name) {
         this.name = name;
         this.carriages = new LinkedList<>();
     }
 
-    public int trainSetting(DepoVagon carriage) {
+    public int trainSetting(DepoWagon carriage) {
         int a=0;
         //System.out.println("first vagon= " + carriages.getFirst()+" end vagon = "+carriages.getLast()+" size= " + carriages.size());
-        if (carriage.isTypeVagon()) {
+        if (carriage.isTypeWagon()) {
             if (fistVagon() & carriages.size() == 4 ) {carriages.addLast(carriage);a=1;}
             if (!fistVagon()) {carriages.addFirst(carriage);a=1;}
             //System.out.println("-----------end vagon= " + carriages.size());
@@ -27,7 +27,7 @@ public class Train {
         //System.out.println(" vagon ----- "+endVagon());
         //System.out.println(" end vagon ----- "+endVagon());
         if (endVagon()) {
-            System.out.println("----------------Train consist= " + carriages.size()+"  name - "+carriage.getNameVagon()+" main - "+carriage.isTypeVagon());
+            System.out.println("----------------Train consist= " + carriages.size()+"  name - "+carriage.getNameWagon()+" main - "+carriage.isTypeWagon());
         }
         return a;
     }
@@ -47,23 +47,23 @@ public class Train {
         this.name = name;
     }
 
-    public LinkedList<DepoVagon> getCarriages() {
+    public LinkedList<DepoWagon> getCarriages() {
         return carriages;
     }
 
-    public void setCarriages(LinkedList<DepoVagon> carriages) {
+    public void setCarriages(LinkedList<DepoWagon> carriages) {
         this.carriages = carriages;
     }
 
     private boolean fistVagon() {
         if (carriages.size() == 0)
             return false;
-        return carriages.getFirst().isTypeVagon();
+        return carriages.getFirst().isTypeWagon();
     }
 
     private boolean endVagon() {
         if (carriages.size() <5)
             return false;
-        return carriages.getLast().isTypeVagon();
+        return carriages.getLast().isTypeWagon();
     }
 }

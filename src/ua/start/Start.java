@@ -1,11 +1,10 @@
 package ua.start;
 
-import ua.depo.DepoVagon;
+import ua.depo.DepoWagon;
 import ua.depo.Train;
 import ua.driver.MetroDriver;
 import ua.metroline.TrainOnLine;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -14,24 +13,24 @@ import java.util.*;
 public class Start {
     public static void main(String[] args) {
         //Consist  carriages------------------------------------------
-        List<DepoVagon> depoVagons=new ArrayList<>();
+        List<DepoWagon> depoWagons =new ArrayList<>();
         String name="vagon-";
         int count=0;
         for (int i=1;i<21;i++ ){
-            depoVagons.add(new DepoVagon(name+(count),true));
-            depoVagons.add(new DepoVagon(name+(++count),false));
-            depoVagons.add(new DepoVagon(name+(++count),false));
-            depoVagons.add(new DepoVagon(name+(++count),false));
-            depoVagons.add(new DepoVagon(name+(++count),true));
+            depoWagons.add(new DepoWagon(name+(count),true));
+            depoWagons.add(new DepoWagon(name+(++count),false));
+            depoWagons.add(new DepoWagon(name+(++count),false));
+            depoWagons.add(new DepoWagon(name+(++count),false));
+            depoWagons.add(new DepoWagon(name+(++count),true));
             count++;
             }
-        //System.out.println(depoVagons);
+        //System.out.println(depoWagons);
         //Consist Trains-------------------------------------------------------------
         LinkedList<Train> depoTrains=new LinkedList<>();
         String nameTrain="train";
-        Iterator<DepoVagon> iterator=depoVagons.iterator();
+        Iterator<DepoWagon> iterator= depoWagons.iterator();
         int b;
-        int sizeDepo=depoVagons.size()/5;
+        int sizeDepo= depoWagons.size()/5;
         for (int i = 0; i <sizeDepo ; i++) {
             Train train1=new Train(nameTrain+"-"+i);
             System.out.println("Train name= "+train1.getName());
@@ -46,8 +45,8 @@ public class Start {
             depoTrains.add(train1);
         }
 
-         System.out.println("depoVagons size = "+depoVagons.size());
-        System.out.println("----------Trains-------"+depoTrains);
+         System.out.println("depoVagons size = "+ depoWagons.size());
+        System.out.println("----------      Trains     -------"+depoTrains);
         //Consist metro driver--------------------------------------------------
         List<MetroDriver> metroDrivers= new LinkedList<>();
         String nameDriver="Driver";
@@ -60,9 +59,9 @@ public class Start {
         //System.out.println("----------Drivers Trains-------\n"+metroDrivers);
         //Sort metro driver
         Collections.sort(metroDrivers);
-        System.out.println("----------Drivers Trains sorting-------\n"+metroDrivers);
+        System.out.println("----------    Drivers Trains sorting   -------\n"+metroDrivers);
 
-        //Complect Train On Line drivers-------------------------------------------------
+        //Complect On Line Train and drivers-------------------------------------------------
         LinkedList<TrainOnLine> trainOnLines=new LinkedList<>();
         Iterator<MetroDriver> metroDriverIterator= metroDrivers.iterator();
         int indexdepoTrains=0;
@@ -70,7 +69,7 @@ public class Start {
             trainOnLines.add(new TrainOnLine(metroDriverIterator.next(),depoTrains.get(indexdepoTrains)));
             indexdepoTrains++;
         }
-        System.out.println("---------train OnL ines-------\n"+trainOnLines);
+        System.out.println("---------------   Train On Lines   --------------------\n"+trainOnLines);
 
 
 
