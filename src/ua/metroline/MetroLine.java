@@ -5,23 +5,34 @@ import ua.depo.Train;
 import java.util.LinkedList;
 
 /**
- * Created by liny on 17.12.15.
+ * Created by liny on 24.12.15.
  */
 public class MetroLine {
     private String name;
-    private LinkedList<TrainOnLine> trainsOnLine;
-
-    public MetroLine(String name, LinkedList<TrainOnLine> trainsOnLine) {
-        this.name = name;
-        this.trainsOnLine = trainsOnLine;
-    }
+    private LinkedList<Train> trainsOnLine;
+    private LinkedList<MetroStation> metroStations;
 
     @Override
     public String toString() {
         return "MetroLine{" +
                 "name='" + name + '\'' +
                 ", trainsOnLine=" + trainsOnLine +
+                ", metroStations=" + metroStations +
                 '}';
+    }
+
+    public MetroLine(String name, LinkedList<Train> trainsOnLine, LinkedList<MetroStation> metroStations) {
+        this.name = name;
+        this.trainsOnLine = trainsOnLine;
+        this.metroStations = metroStations;
+    }
+
+    public LinkedList<MetroStation> getMetroStations() {
+        return metroStations;
+    }
+
+    public void setMetroStations(LinkedList<MetroStation> metroStations) {
+        this.metroStations = metroStations;
     }
 
     public String getName() {
@@ -32,11 +43,11 @@ public class MetroLine {
         this.name = name;
     }
 
-    public LinkedList<TrainOnLine> getTrainsOnLine() {
+    public LinkedList<Train> getTrainsOnLine() {
         return trainsOnLine;
     }
 
-    public void setTrainsOnLine(LinkedList<TrainOnLine> trainsOnLine) {
+    public void setTrainsOnLine(LinkedList<Train> trainsOnLine) {
         this.trainsOnLine = trainsOnLine;
     }
 }

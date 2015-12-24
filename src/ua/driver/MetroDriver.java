@@ -1,9 +1,12 @@
 package ua.driver;
 
+import java.util.Random;
+
 /**
  * Created by liny on 15.12.15.
  */
-public class MetroDriver implements Comparable<MetroDriver>{
+public class MetroDriver{
+    Random random = new Random();
     private double skill;
     private String name;
     @Override
@@ -12,7 +15,6 @@ public class MetroDriver implements Comparable<MetroDriver>{
                 " skill=" + skill +
                 "  name - '" + name +"\n";
     }
-
     public MetroDriver(double skill, String name) {
         this.skill = skill;
         this.name = name;
@@ -34,10 +36,9 @@ public class MetroDriver implements Comparable<MetroDriver>{
         this.name = name;
     }
 
-    @Override
-    public int compareTo(MetroDriver o) {
-
-        return Double.compare(o.skill,this.skill);
+    public void Experience (){
+        double  experience=random.nextDouble()*100-50;
+        skill=skill+experience;
     }
 
 

@@ -12,6 +12,9 @@ public class DepoWagon {
         this.typeWagon = mainVagon;
     }
 
+    public DepoWagon() {
+    }
+
     public String getNameWagon() {
         return nameWagon;
     }
@@ -30,8 +33,8 @@ public class DepoWagon {
 
     @Override
     public String toString() {
-        return "Depo Wagon -- " +
-                "nameWagon - " + nameWagon +
-                " typeWagon - " + typeWagon +"\n";
+        return " Wagon -- " +
+                "name - " + nameWagon +
+                "  type - " + typeWagon +"\n";
     }
 }
