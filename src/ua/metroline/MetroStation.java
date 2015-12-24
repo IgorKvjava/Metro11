@@ -12,7 +12,7 @@ public class MetroStation {
 
     @Override
     public String toString() {
-        return " Station " + name ;
+        return  name ;
     }
 
     public String getName() {

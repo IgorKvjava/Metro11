@@ -6,13 +6,13 @@ package ua.start;
 public class Start {
     public static void main(String[] args) {
         Builder builder=new Builder();
-        //Consist Trains-------------------------------------------------------------
+        //Completion Trains-------------------------------------------------------------
         builder.builderTrains();
         System.out.println("depo "+builder.trains.size()+" trains");
-        //Consist metro driver-------------------------------------------------
+        //Completion metro driver-------------------------------------------------
         builder.builderMetroDrivers();
         System.out.println(" Drivers count-"+builder.metroDriverPriorityQueue.size());
-
+        //Completion Metro Line
         builder.builderMetroLine(7,builder.trains,builder.metroDriverPriorityQueue);
         System.out.println(" Metro Line-"+builder.metroLines);
 

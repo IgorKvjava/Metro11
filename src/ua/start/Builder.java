@@ -76,7 +76,7 @@ public class Builder {
             // metro Stations ----------------
             LinkedList<MetroStation> metroStations=new LinkedList<>();
             for (int j = 0; j <10 ; j++) {
-                metroStations.add(j,new MetroStation(nameStations[i]+" - "+j));
+                metroStations.add(j,new MetroStation(nameStations[i]+"-"+j));
             }
             //  trains  Line ---------------
             LinkedList<Train> trainsLine=new LinkedList<>();

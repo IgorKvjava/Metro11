@@ -15,7 +15,7 @@ public class MetroLine {
     @Override
     public String toString() {
         return "\nMetro Line - " + name +
-                " \nMetro Stations= " + metroStations +
+                " \nMetro Stations " + metroStations +
                 " \nTrains On Line= " + trainsOnLine  ;
     }
 
