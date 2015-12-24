@@ -33,8 +33,8 @@ public class DepoWagon {
 
     @Override
     public String toString() {
-        return " Wagon -- " +
-                "name - " + nameWagon +
-                "  type - " + typeWagon +"\n";
+        return "Wagon < " +
+                "name  " + nameWagon +
+                "  type  " + typeWagon +" >\n";
     }
 }

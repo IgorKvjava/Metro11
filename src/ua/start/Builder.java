@@ -17,7 +17,7 @@ public class Builder {
     LinkedList<Train> trains = new LinkedList<>();
     PriorityQueue<MetroDriver> metroDriverPriorityQueue;
     LinkedList<MetroLine> metroLines=new LinkedList<>();
-    LinkedList<MetroStation> metroStations=new LinkedList<>();
+
     String [] nameStations={"Red","Green","Blue"};
     //Consist Trains-------------------------------------------------------------
     public void builderTrains() {
@@ -73,9 +73,12 @@ public class Builder {
         Iterator<Train> trainIterator=trains.iterator();
         for (int i = 0; i < 3; i++) {
             int countStations=0;
+            // metro Stations ----------------
+            LinkedList<MetroStation> metroStations=new LinkedList<>();
             for (int j = 0; j <10 ; j++) {
                 metroStations.add(j,new MetroStation(nameStations[i]+" - "+j));
             }
+            //  trains  Line ---------------
             LinkedList<Train> trainsLine=new LinkedList<>();
             while (trainIterator.hasNext()){
                 MetroDriver metroDriver=metroDriverPriorityQueue.poll();
@@ -84,7 +87,7 @@ public class Builder {
                 trainLine.setMetroDriver(metroDriver);
                 trainsLine.add(trainLine);
                 countStations++;
-                if (countStations>7) break;
+                if (countStations>countTrainsLine) break;
                 }
                 metroLines.add(new MetroLine(nameStations[i],trainsLine,metroStations));
 

@@ -11,8 +11,7 @@ public class MetroDriver{
     private String name;
     @Override
     public String toString() {
-        return "  " +
-                " skill=" + skill +
+        return  " skill=" + skill +
                 "  name - '" + name +"\n";
     }
     public MetroDriver(double skill, String name) {

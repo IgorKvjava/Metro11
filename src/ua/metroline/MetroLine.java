@@ -14,11 +14,9 @@ public class MetroLine {
 
     @Override
     public String toString() {
-        return "MetroLine{" +
-                "name='" + name + '\'' +
-                ", trainsOnLine=" + trainsOnLine +
-                ", metroStations=" + metroStations +
-                '}';
+        return "\nMetro Line - " + name +
+                " \nMetro Stations= " + metroStations +
+                " \nTrains On Line= " + trainsOnLine  ;
     }
 
     public MetroLine(String name, LinkedList<Train> trainsOnLine, LinkedList<MetroStation> metroStations) {

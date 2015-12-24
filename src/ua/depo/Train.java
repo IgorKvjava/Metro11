@@ -45,9 +45,8 @@ public class Train {
     //------------------------------------------------------------
     @Override
     public String toString() {
-        return " " +
-                "name -- " + name + "\n"+
-                " carriages\n" + carriages;
+        return  "\nname - " + name +"\ndriver "+metroDriver +"\n"+
+                "carriages\n" + carriages;
     }
 
     public MetroDriver getMetroDriver() {
