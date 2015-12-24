@@ -11,7 +11,7 @@ public class MetroDriver{
     private String name;
     @Override
     public String toString() {
-        return  " skill=" + skill +
+        return  "skill=" + skill +
                 "  name - '" + name +"\n";
     }
     public MetroDriver(double skill, String name) {
@@ -36,7 +36,7 @@ public class MetroDriver{
     }
 
     public void Experience (){
-        double  experience=random.nextDouble()*100-50;
+        double  experience=random.nextDouble()*10-10;
         skill=skill+experience;
     }
 

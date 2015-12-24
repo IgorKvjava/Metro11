@@ -19,7 +19,7 @@ public class Builder {
     LinkedList<MetroLine> metroLines=new LinkedList<>();
 
     String [] nameStations={"Red","Green","Blue"};
-    //Consist Trains-------------------------------------------------------------
+    //Consist Trains-------------------------------------------------------------------------------------------
     public void builderTrains() {
         //Consist wagons-------------------------------------------------------------
         String name = "wagon-";
@@ -50,7 +50,7 @@ public class Builder {
             trains.add(train1);
         }
     }
-    //Consist metro driver-------------------------------------------------
+    //Consist metro driver-------------------------------------------------------------------------------------
     public void builderMetroDrivers (){
         //comparison of skills Driver
         Comparator<MetroDriver> metroDriverComparator=new Comparator<MetroDriver>() {
@@ -71,6 +71,7 @@ public class Builder {
     //Drivers distribute on trains and distribute metro lines -------------------------------------------------
     public void builderMetroLine(int countTrainsLine, LinkedList<Train> trains,PriorityQueue<MetroDriver> metroDriverPriorityQueue){
         Iterator<Train> trainIterator=trains.iterator();
+        Train trainLine;
         for (int i = 0; i < 3; i++) {
             int countStations=0;
             // metro Stations ----------------
@@ -82,16 +83,20 @@ public class Builder {
             LinkedList<Train> trainsLine=new LinkedList<>();
             while (trainIterator.hasNext()){
                 MetroDriver metroDriver=metroDriverPriorityQueue.poll();
-                Train trainLine ;//=new Train(null,null,null);
+
                 trainLine=trainIterator.next();
                 trainLine.setMetroDriver(metroDriver);
                 trainsLine.add(trainLine);
+                metroDriver.Experience();
+                //metroDrivers.add(metroDriver);
                 countStations++;
                 if (countStations>countTrainsLine) break;
                 }
                 metroLines.add(new MetroLine(nameStations[i],trainsLine,metroStations));
 
         }
+
+        //System.out.println(metroDriverPriorityQueue);
     }
 
 }

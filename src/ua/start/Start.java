@@ -13,8 +13,10 @@ public class Start {
         builder.builderMetroDrivers();
         System.out.println(" Drivers count-"+builder.metroDriverPriorityQueue.size());
         //Completion Metro Line
+        System.out.println("metroDriverPriorityQueue "+builder.metroDriverPriorityQueue);
         builder.builderMetroLine(7,builder.trains,builder.metroDriverPriorityQueue);
         System.out.println(" Metro Line-"+builder.metroLines);
+        System.out.println("metroDriverPriorityQueue "+builder.metroDriverPriorityQueue);
 
 
 
