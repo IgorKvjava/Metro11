@@ -71,6 +71,7 @@ public class Builder {
     //Drivers distribute on trains and distribute metro lines -------------------------------------------------
     public void builderMetroLine(int countTrainsLine, LinkedList<Train> trains,PriorityQueue<MetroDriver> metroDriverPriorityQueue){
         Iterator<Train> trainIterator=trains.iterator();
+        int countMetroDrivers=metroDriverPriorityQueue.size();
         Train trainLine;
         for (int i = 0; i < 3; i++) {
             int countStations=0;
@@ -93,6 +94,10 @@ public class Builder {
                 if (countStations>countTrainsLine) break;
                 }
                 metroLines.add(new MetroLine(nameStations[i],trainsLine,metroStations));
+
+        }
+        for (int i = 0; i <countMetroDrivers ; i++) {
+            metroDriverPriorityQueue.add(trains.get(i).getMetroDriver());
 
         }
 

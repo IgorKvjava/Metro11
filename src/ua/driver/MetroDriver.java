@@ -36,7 +36,7 @@ public class MetroDriver{
     }
 
     public void Experience (){
-        double  experience=random.nextDouble()*10-10;
+        double  experience=random.nextDouble()*30-10;
         skill=skill+experience;
     }
 
