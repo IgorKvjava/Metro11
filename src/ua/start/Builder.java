@@ -19,7 +19,7 @@ public class Builder {
     LinkedList<MetroLine> metroLines=new LinkedList<>();
 
     String [] nameStations={"Red","Green","Blue"};
-    //Consist Trains-------------------------------------------------------------------------------------------
+    //Completion Trains-------------------------------------------------------------------------------------------
     public void builderTrains() {
         //Consist wagons-------------------------------------------------------------
         String name = "wagon-";
@@ -50,7 +50,7 @@ public class Builder {
             trains.add(train1);
         }
     }
-    //Consist metro driver-------------------------------------------------------------------------------------
+    //CCompletion metro driver-------------------------------------------------------------------------------------
     public void builderMetroDrivers (){
         //comparison of skills Driver
         Comparator<MetroDriver> metroDriverComparator=new Comparator<MetroDriver>() {
@@ -70,6 +70,7 @@ public class Builder {
     }
     //Drivers distribute on trains and distribute metro lines -------------------------------------------------
     public void builderMetroLine(int countTrainsLine, LinkedList<Train> trains,PriorityQueue<MetroDriver> metroDriverPriorityQueue){
+        LinkedList<MetroLine> metroLines=new LinkedList<>();
         Iterator<Train> trainIterator=trains.iterator();
         int countMetroDrivers=metroDriverPriorityQueue.size();
         Train trainLine;
@@ -96,12 +97,20 @@ public class Builder {
                 metroLines.add(new MetroLine(nameStations[i],trainsLine,metroStations));
 
         }
+        //DriverPriorityQueue fill
         for (int i = 0; i <countMetroDrivers ; i++) {
             metroDriverPriorityQueue.add(trains.get(i).getMetroDriver());
 
         }
+        this.metroLines=metroLines;
 
         //System.out.println(metroDriverPriorityQueue);
     }
 
+    public void passengerOnStation(){
+
+    }
+    public void trainOnStation(){
+
+    }
 }
