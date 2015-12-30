@@ -10,9 +10,8 @@ public class Passenger {
     }
     @Override
     public String toString() {
-        return "Passenger{" +
-                "name='" + name + '\'' +
-                '}';
+        return "Passenger " +
+                "name " + name;
     }
 
     public String getName() {

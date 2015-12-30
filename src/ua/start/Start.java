@@ -45,7 +45,7 @@ public class Start {
             e.printStackTrace();
         }*/
 
-        builder.passengersMove();
+        builder.passengersFillOnStation();
 
     }
 }

@@ -112,14 +112,19 @@ public class Builder {
     public void passengerOnStation(){
 
     }
-    public void passengersMove() {
+    //make passengers and move to wagon------------------------------------------------------------
+    public void passengersFillOnStation() {
         String namePassenger="Passenger";
         for (int i = 0; i < metroLines.size(); i++) {
+            System.out.println("-------------"+metroLines.get(i).getName()+"-------------");
             namePassenger=namePassenger+" lin "+i;
-                    LinkedList<Passenger> passengersList = new LinkedList<>();
+
             for (int j = 0; j <metroLines.get(i).getMetroStations().size() ; j++) {
                 namePassenger=namePassenger+" sta "+j;
-                for (int k = 0; k <rand.nextInt(150) ; k++) {
+                int passengersAmount=rand.nextInt(150);
+                LinkedList<Passenger> passengersList = new LinkedList<>();
+                //System.out.println(passengersAmount+" -passengers");
+                for (int k = 0; k <passengersAmount ; k++) {
                     Passenger passenger=new Passenger(namePassenger+" num "+k);
                     passengersList.add(passenger);
                 }
