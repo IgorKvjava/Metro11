@@ -1,5 +1,10 @@
 package ua.start;
 
+import org.xmlpull.v1.XmlPullParserException;
+import ua.Xmlcreater;
+
+import java.io.IOException;
+
 /**
  * Created by univer3 on 12/12/2015.
  */
@@ -30,6 +35,15 @@ public class Start {
                 "----------------------------------------------------------------------------------");
 
         System.out.println("metroDriverPriorityQueue "+builder.metroDriverPriorityQueue);
+        /*Xmlcreater xmlcreater=new Xmlcreater();
+        System.out.println(builder.trains.getFirst());
+        try {
+            xmlcreater.createXMLDOMfile(builder.trains.getFirst());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        }*/
 
 
     }
