@@ -5,6 +5,7 @@ import ua.depo.Train;
 import ua.driver.MetroDriver;
 import ua.metroline.MetroLine;
 import ua.metroline.MetroStation;
+import ua.passengers.Passenger;
 
 import java.util.*;
 
@@ -17,6 +18,7 @@ public class Builder {
     LinkedList<Train> trains = new LinkedList<>();
     PriorityQueue<MetroDriver> metroDriverPriorityQueue;
     LinkedList<MetroLine> metroLines=new LinkedList<>();
+    Random rand = new Random();
 
     String [] nameStations={"Red","Green","Blue"};
     //Completion Trains-------------------------------------------------------------------------------------------
@@ -62,7 +64,7 @@ public class Builder {
         // Metro Drivers
         PriorityQueue<MetroDriver> metroDriverPriorityQueue=new PriorityQueue<>(metroDriverComparator);
         String nameDriver="Driver";
-        Random rand = new Random();
+
         for (int i = 0; i <20 ; i++) {
             metroDriverPriorityQueue.add(new MetroDriver(rand.nextInt(45),nameDriver+"-"+i));
         }
@@ -110,7 +112,21 @@ public class Builder {
     public void passengerOnStation(){
 
     }
-    public void trainOnStation(){
+    public void passengersMove() {
+        String namePassenger="Passenger";
+        for (int i = 0; i < metroLines.size(); i++) {
+            namePassenger=namePassenger+" lin "+i;
+                    LinkedList<Passenger> passengersList = new LinkedList<>();
+            for (int j = 0; j <metroLines.get(i).getMetroStations().size() ; j++) {
+                namePassenger=namePassenger+" sta "+j;
+                for (int k = 0; k <rand.nextInt(150) ; k++) {
+                    Passenger passenger=new Passenger(namePassenger+" num "+k);
+                    passengersList.add(passenger);
+                }
+                System.out.println(passengersList.size());
+                metroLines.get(i).getMetroStations().get(j).setPassengers(passengersList);
+            }
 
+        }
     }
 }

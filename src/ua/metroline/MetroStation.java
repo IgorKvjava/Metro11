@@ -26,4 +26,13 @@ public class MetroStation {
     public void setName(String name) {
         this.name = name;
     }
+
+    public LinkedList<Passenger> getPassengers() {
+        return passengers;
+    }
+
+    public void setPassengers(LinkedList<Passenger> passengers) {
+        this.passengers = passengers;
+    }
 }
+
