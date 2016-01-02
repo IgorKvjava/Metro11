@@ -64,7 +64,6 @@ public class Builder {
         // Metro Drivers
         PriorityQueue<MetroDriver> metroDriverPriorityQueue=new PriorityQueue<>(metroDriverComparator);
         String nameDriver="Driver";
-
         for (int i = 0; i <20 ; i++) {
             metroDriverPriorityQueue.add(new MetroDriver(rand.nextInt(45),nameDriver+"-"+i));
         }
@@ -87,7 +86,6 @@ public class Builder {
             LinkedList<Train> trainsLine=new LinkedList<>();
             while (trainIterator.hasNext()){
                 MetroDriver metroDriver=metroDriverPriorityQueue.poll();
-
                 trainLine=trainIterator.next();
                 trainLine.setMetroDriver(metroDriver);
                 trainsLine.add(trainLine);
@@ -111,28 +109,31 @@ public class Builder {
 
     //passengers go to wagons
     public void passengerOnStation(){
+        metroLines.get(0).getTrainsOnLine().get(0).getCarriages().get(0);
 
     }
-    //make passengers and move to wagon------------------------------------------------------------
+    //make passengers ------------------------------------------------------------
     public void passengersFillOnStation() {
         String namePassenger="Passenger";
         for (int i = 0; i < metroLines.size(); i++) {
             System.out.println("-------------"+metroLines.get(i).getName()+"-------------");
-            namePassenger=namePassenger+" lin "+i;
-
-            for (int j = 0; j <metroLines.get(i).getMetroStations().size() ; j++) {
-                namePassenger=namePassenger+" sta "+j;
-                int passengersAmount=rand.nextInt(150);
+            //namePassenger=namePassenger+" lin "+i;
+            //
+            for (int j = 0; j < metroLines.get(i).getMetroStations().size() ; j++) {
+               // namePassenger=namePassenger+" sta "+j;
+                int passengersAmount=rand.nextInt(150)+1;
                 LinkedList<Passenger> passengersList = new LinkedList<>();
                 //System.out.println(passengersAmount+" -passengers");
-                for (int k = 0; k <passengersAmount ; k++) {
-                    Passenger passenger=new Passenger(namePassenger+" num "+k);
+                for (int k = 0; k < passengersAmount ; k++) {
+                    Passenger passenger=new Passenger(namePassenger+" lin "+i+" sta "+j+" num "+k);
                     passengersList.add(passenger);
                 }
                 System.out.println(passengersList.size());
                 metroLines.get(i).getMetroStations().get(j).setPassengers(passengersList);
+
             }
 
         }
+
     }
 }

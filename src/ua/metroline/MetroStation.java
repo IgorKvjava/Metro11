@@ -17,7 +17,9 @@ public class MetroStation {
 
     @Override
     public String toString() {
-        return  name ;
+        return "\nMetroStation " +
+                "name " + name + '\'' +
+                " passengers " + passengers ;
     }
 
     public String getName() {

@@ -47,6 +47,7 @@ public class DepoWagon {
     public String toString() {
         return "Wagon < " +
                 "name  " + nameWagon +
-                "  type  " + typeWagon +" >\n";
+                "  type  " + typeWagon +
+                " passengers"+passengers+" >\n";
     }
 }

@@ -18,23 +18,14 @@ public class Start {
         builder.builderMetroDrivers();
         System.out.println(" Drivers count-"+builder.metroDriverPriorityQueue.size());
         //Completion Metro Line
-        System.out.println("metroDriverPriorityQueue "+builder.metroDriverPriorityQueue);
+        System.out.println("metroDriver PriorityQueue "+builder.metroDriverPriorityQueue);
         builder.builderMetroLine(7,builder.trains,builder.metroDriverPriorityQueue);
         System.out.println(" Metro Line-"+builder.metroLines);
-        System.out.println("metroDriverPriorityQueue "+builder.metroDriverPriorityQueue+"\n" +
+        System.out.println("metroDriver PriorityQueue "+builder.metroDriverPriorityQueue+"\n" +
                 "----------------------------------------------------------------------------------");
+        System.out.println("metroDriver PriorityQueue "+builder.metroDriverPriorityQueue);
 
-        builder.builderMetroLine(6,builder.trains,builder.metroDriverPriorityQueue);
-        System.out.println(" Metro Line-"+builder.metroLines+"\n" +
-                "----------------------------------------------------------------------------------");
-
-        System.out.println("metroDriverPriorityQueue "+builder.metroDriverPriorityQueue+"\n" +
-                "----------------------------------------------------------------------------------");
-        builder.builderMetroLine(4,builder.trains,builder.metroDriverPriorityQueue);
-        System.out.println(" Metro Line-"+builder.metroLines+"\n" +
-                "----------------------------------------------------------------------------------");
-
-        System.out.println("metroDriverPriorityQueue "+builder.metroDriverPriorityQueue);
+        //make xml---------------------------------------------------------------------------------------
         /*Xmlcreater xmlcreater=new Xmlcreater();
         System.out.println(builder.trains.getFirst());
         try {
@@ -45,7 +36,9 @@ public class Start {
             e.printStackTrace();
         }*/
 
+        //passengers go to Stations--------------------------------------------------------------------------
         builder.passengersFillOnStation();
+        System.out.println(builder.metroLines);
 
     }
 }
