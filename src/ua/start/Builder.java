@@ -109,6 +109,7 @@ public class Builder {
         //System.out.println(metroDriverPriorityQueue);
     }
 
+    //passengers go to wagons
     public void passengerOnStation(){
 
     }
