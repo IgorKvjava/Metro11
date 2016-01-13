@@ -39,6 +39,7 @@ public class Start {
         //passengers go to Stations--------------------------------------------------------------------------
         builder.passengersFillOnStation();
         System.out.println(builder.metroLines);
+        builder.passengerMoving();
 
     }
 }

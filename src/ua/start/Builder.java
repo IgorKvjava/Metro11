@@ -108,8 +108,17 @@ public class Builder {
     }
 
     //passengers go to wagons
-    public void passengerOnStation(){
-        metroLines.get(0).getTrainsOnLine().get(0).getCarriages().get(0);
+    public void passengerMoving(){
+        LinkedList<Passenger> passengers=new LinkedList<>();
+
+        int passegerMovingWagonCount=metroLines.get(0).getMetroStations().get(0).getPassengers().size()/5;
+        for (int i = 0; i <passegerMovingWagonCount ; i++) {
+            if (rand.nextInt(2)==0)
+                passengers.add(metroLines.get(0).getMetroStations().get(0).getPassengers().get(i));
+        }
+        metroLines.get(0).getTrainsOnLine().get(0).getCarriages().get(0).setPassengers(passengers);
+        System.out.println(metroLines.get(0).getTrainsOnLine().get(0).getCarriages().get(0).getPassengers());
+        System.out.println(passegerMovingWagonCount);
 
     }
     //make passengers ------------------------------------------------------------
