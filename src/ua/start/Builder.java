@@ -109,16 +109,33 @@ public class Builder {
 
     //passengers go to wagons
     public void passengerMoving(){
-        LinkedList<Passenger> passengers=new LinkedList<>();
 
+        //Passenger forming group
+        System.out.println(metroLines.get(0).getMetroStations().get(0).getPassengers().size());
         int passegerMovingWagonCount=metroLines.get(0).getMetroStations().get(0).getPassengers().size()/5;
-        for (int i = 0; i <passegerMovingWagonCount ; i++) {
-            if (rand.nextInt(2)==0)
-                passengers.add(metroLines.get(0).getMetroStations().get(0).getPassengers().get(i));
+        int passegerMovingWagonCountStatik=passegerMovingWagonCount;
+        for (int j = 0; j <5; j++) {
+            int passegerIndex = passegerMovingWagonCountStatik*j;
+            passegerMovingWagonCount = passegerMovingWagonCountStatik+passegerIndex;
+
+            //Passenger go to wagon
+            LinkedList<Passenger> passengers=new LinkedList<>();
+            if (passegerIndex!=0) passegerIndex=passegerIndex+1;
+            System.out.println("passegerIndex----------------"+passegerIndex+" j "+j+"  passegerMovingWagonCount "+ passegerMovingWagonCount);
+            for (int i = passegerIndex; i < passegerMovingWagonCount ; i++) {
+                if (rand.nextInt(2)==0) {
+                    passengers.add(metroLines.get(0).getMetroStations().get(0).getPassengers().get(i));
+                    System.out.println(metroLines.get(0).getMetroStations().get(0).getPassengers().get(i));
+                }
+            }
+            metroLines.get(0).getTrainsOnLine().get(0).getCarriages().get(j).setPassengers(passengers);
+            System.out.println("passenger wagon count "+metroLines.get(0).getTrainsOnLine().get(0).getCarriages().get(j).getPassengers().size()+
+                    "\nPassenger staitin count "+metroLines.get(0).getMetroStations().get(0).getPassengers().size());
         }
-        metroLines.get(0).getTrainsOnLine().get(0).getCarriages().get(0).setPassengers(passengers);
-        System.out.println(metroLines.get(0).getTrainsOnLine().get(0).getCarriages().get(0).getPassengers());
-        System.out.println(passegerMovingWagonCount);
+        //control
+
+
+        System.out.println("Passenger group count "+passegerMovingWagonCountStatik);
 
     }
     //make passengers ------------------------------------------------------------
@@ -137,7 +154,7 @@ public class Builder {
                     Passenger passenger=new Passenger(namePassenger+" lin "+i+" sta "+j+" num "+k);
                     passengersList.add(passenger);
                 }
-                System.out.println(passengersList.size());
+                System.out.println("passengers List size  "+passengersList.size());
                 metroLines.get(i).getMetroStations().get(j).setPassengers(passengersList);
 
             }
