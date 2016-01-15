@@ -135,7 +135,7 @@ public class Builder {
         //control
 
 
-        System.out.println("Passenger group count "+passegerMovingWagonCountStatik);
+        System.out.println("Passenger group count  "+passegerMovingWagonCountStatik);
 
     }
     //make passengers ------------------------------------------------------------
